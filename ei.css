@@ -1,0 +1,16 @@
+body{
+background: white;
+max-width: 800px;
+}
+
+p{
+text-align: justify;
+}
+
+div{
+text-align: left;
+}
+
+td{
+vertical-align: top;
+}
