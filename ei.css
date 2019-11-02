@@ -1,16 +1,9 @@
 body{
-background: white;
-max-width: 800px;
-}
-
-p{
-text-align: justify;
+  background: white;
+  max-width: 900px;
 }
 
 div{
-text-align: left;
-}
-
-td{
-vertical-align: top;
+  background: white;
+  text-align: left;
 }
