@@ -1,0 +1,18 @@
+body{
+background: white;
+}
+
+div{
+background-color: ivory;
+border-style: solid;
+border-width: thin;
+border-spacing: 5;
+}
+
+p{
+text-align: justify;
+}
+
+img{
+border-color: blue;
+}
