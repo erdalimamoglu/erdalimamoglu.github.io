@@ -46,8 +46,8 @@ int main() {
 
 /*
 Ornek olarak
-a = 1
-b = 2
-c = -100
+a = 10
+b = 20
+c = 30
 girebilirsiniz
 */
