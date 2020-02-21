@@ -35,8 +35,8 @@ int main() {
     delta2 = sqrt( abs(delta) );
     reel_kisim = b/(2*a);
     imajiner_kisim = delta2/(2*a);
-    cout << "Birinci kok = (" << reel_kisim << ")" << " + i (" << imajiner_kisim << ")" << endl;
-    cout << "Ikinci kok = (" << reel_kisim << ")" << " - i (" << imajiner_kisim << ")" << endl;
+    cout << "Birinci kok = (" << reel_kisim << ") + i (" << imajiner_kisim << ")" << endl;
+    cout << "Ikinci kok = (" << reel_kisim << ") - i (" << imajiner_kisim << ")" << endl;
   }
 
   cout << "--------\nHoscakalin\n--------\n";
