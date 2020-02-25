@@ -15,7 +15,7 @@ int main(){
   /*
   Burada x/y isleminin sonucu kusuratli olsa bile
   z degiskeni bir int olarak deklare edildiginden
-  z degiskenine z/y isleminin sonucunun tam sayi kismi atanir.
+  z degiskenine x/y isleminin sonucunun tam sayi kismi atanir.
   Ornek olarak x=3,y=2 deneyebilirsiniz.
   */
 
