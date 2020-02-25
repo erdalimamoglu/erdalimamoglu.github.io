@@ -11,12 +11,12 @@ int main(){
   cin >> y;
 
   z = x/y;
-  /*
-  burada x/y isleminin sonucu kusuratli olsa bile
-  z degiskeni bir int olarak deklare edildiginden
-  z degiskenine z/y isleminin sonucunun tam sayi kismi atanir
 
-  Ornek olarak x=3,y=3 deneyebilirsiniz
+  /*
+  Burada x/y isleminin sonucu kusuratli olsa bile
+  z degiskeni bir int olarak deklare edildiginden
+  z degiskenine z/y isleminin sonucunun tam sayi kismi atanir.
+  Ornek olarak x=3,y=2 deneyebilirsiniz.
   */
 
   cout << x << "/" << y << " = " << z << endl;
