@@ -22,6 +22,7 @@ int main(){
   return 0;
 }
 
+// faktoriyel fonksiyonu
 int faktoriyel(int x){
   int j = 1, f = 1;
 
@@ -33,6 +34,7 @@ int faktoriyel(int x){
   return f;
 }
 
+// baska bir faktoriyel fonksiyonu
 int faktoriyel2(int x){
   return (x==0 ? 1 : x*faktoriyel2(x-1));
 }

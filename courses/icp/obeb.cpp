@@ -39,7 +39,7 @@ int main(){
 		sonuc = a;
 	}
 
-	// ustteki while dongusu sonlandiginda 
+	// ustteki while dongusu sonlandiginda
 	// sonuc degiskenine obeb(x,y) atanmis olacaktir
 	// cevabi ekrana yazdiralim
 

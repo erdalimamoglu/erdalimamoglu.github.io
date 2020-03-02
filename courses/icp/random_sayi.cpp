@@ -4,7 +4,6 @@
 using namespace std;
 
 int main(){
-    srand(time(0));
     int r, tahmin, n;
 
     cout << "--\nmerhaba, kucuk bir oyun oynayalim\n";
@@ -12,6 +11,7 @@ int main(){
     cout << "n: ";
     cin >> n;
 
+    srand(time(0));
     r = rand() % n + 1;
     cout << "random bir sayi urettim, bu sayiyi bulabilir misiniz?\n";
 

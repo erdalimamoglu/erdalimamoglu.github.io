@@ -1,0 +1,11 @@
+Programlama derslerine nasıl çalışmalısınız!
+
+- Dersleri düzenli takip edin.
+- Sizin için hazırlanmış ders notlarını okuyun.
+- Ders notlarında yer alan programları inceleyip çalıştırın.
+- Her dersten sonra, derste işlediğimiz konuları kapsayan küçük programlar yazın.
+- Ders notlarında yer alan sorularda sorulan programları bizzat kendiniz kodlayın.
+
+- Programlama dersinde hem bilgi öğrenmektesiniz hem de YETENEK kazanmaktasınız. Problem analiz etme, algoritma dizayn etme, kodlama, yazılımı test etme gibi YETENEKLERİ kazanmak için ders notlarında yer alan soruları sizin bizzat aktif olarak çözmeye çalışmanız size çok faydalı olacaktır. 
+
+ 
