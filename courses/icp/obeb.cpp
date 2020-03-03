@@ -27,6 +27,8 @@ int main(){
 
 	// Euclid Algoritmasi'ni C++ ile kodlayalim
 
+	g = b;
+
 	if (b==0) {
 		sonuc = a;
 	}
