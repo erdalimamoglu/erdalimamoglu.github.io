@@ -29,17 +29,13 @@ int main(){
 
 	g = b;
 
-	if (b==0) {
-		sonuc = a;
+	while (g != 0){
+		g = a % b;
+		a = b;
+		b = g;
 	}
-	else {
-		while (g != 0){
-			g = a % b;
-			a = b;
-			b = g;
-		}
-		sonuc = a;
-	}
+
+	sonuc = a;
 
 	// ustteki while dongusu sonlandiginda
 	// sonuc degiskenine obeb(x,y) atanmis olacaktir
