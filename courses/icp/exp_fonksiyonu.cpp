@@ -24,7 +24,8 @@ int main(){
 
 // faktoriyel fonksiyonu
 long double faktoriyel(int x){
-  int j = 1, f = 1;
+  int j = 1;
+  long double f = 1;
 
   while (j <= x){
     f = f*j;
