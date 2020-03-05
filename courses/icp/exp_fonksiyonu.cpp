@@ -2,11 +2,11 @@
 using namespace std;
 #include<cmath>
 
-int faktoriyel(int);
-int faktoriyel2(int);
+long double faktoriyel(int);
+long double faktoriyel2(int);
 
 int main(){
-  const int N = 10;
+  const int N = 200;
   int i;
   long double x, sonuc;
 
@@ -23,7 +23,7 @@ int main(){
 }
 
 // faktoriyel fonksiyonu
-int faktoriyel(int x){
+long double faktoriyel(int x){
   int j = 1, f = 1;
 
   while (j <= x){
@@ -35,6 +35,6 @@ int faktoriyel(int x){
 }
 
 // baska bir faktoriyel fonksiyonu
-int faktoriyel2(int x){
+long double faktoriyel2(int x){
   return (x==0 ? 1 : x*faktoriyel2(x-1));
 }
