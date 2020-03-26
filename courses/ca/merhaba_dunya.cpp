@@ -1,5 +1,10 @@
+/*
+Asagidaki C++ programi bilgisayar ekranina
+"Merhaba Dunya" yazdirir
+*/
+
 #include<iostream>
-using namespace std;
+using namespace std;	
 
 int main(){
 
