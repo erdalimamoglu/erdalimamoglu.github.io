@@ -7,7 +7,6 @@ using namespace std;
 // asagida yazilan uc fonksyion birbirinden farklidir
 // cunku bu fonksiyonlarin parametre tipleri farklidir
 // bu ornegi dikkatlice inceleyiniz
-
 // sayilari girdikten sonra hangi fonksiyonlarin cagirildigina dikkat ediniz
 
 double hesapla(int, int);
