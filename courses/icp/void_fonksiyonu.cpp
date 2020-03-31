@@ -3,7 +3,6 @@ Bu programda parametresiz fonksiyonlar ve void fonksiyonlar
 hakkinda ornekler bulabilirsiniz
 */
 
-#include<cmath>
 #include<iostream>
 using namespace std;
 
