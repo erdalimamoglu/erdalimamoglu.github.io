@@ -9,7 +9,8 @@ int main(){
 
   if (ogr_not < 0 || ogr_not > 100){
     cout << "Yanlsi giris yaptiniz\nOgrenci notu 0 ile 100 arasinda olmalidir.\n";
-  } else {
+  }
+  else {
 
     if (90 <= ogr_not && ogr_not <= 100){
       cout << "Harf notu = A\n";

@@ -10,7 +10,8 @@ int main() {
 
   if (a % 2 == 0){
     cout << "Girdiginiz " << a << " sayisi cift sayidir\n";
-  } else {
+  }
+  else {
     cout << "Girdiginiz " << a << " sayisi tek sayidir\n";
   }
 
