@@ -18,10 +18,10 @@ int main(){
   cin >> n;
 
   double arr_1[n], arr_2[n], top_arr[n];
-  cout << "Birinci dizinizin elemanlariniz giriniz:\n";
+  cout << "Birinci dizinizin elemanlarini giriniz:\n";
   dizi_gir(arr_1, n);
 
-  cout << "ikinci dizinizin elemanlariniz giriniz:\n";
+  cout << "ikinci dizinizin elemanlarini giriniz:\n";
   dizi_gir(arr_2, n);
 
   cout << "\n------------\n";
@@ -53,7 +53,7 @@ int main(){
   dizi_ters_cevir(arr_2, n);
   dizi_yazdir(arr_2,n);
 
-  // Bu satirdan sonra dizilerimiz ter cevrilmistir,
+  // Bu satirdan sonra dizilerimiz ters cevrilmistir,
   // fakat ters cevirme islemi dizilerimizin en kucuk ve en buyuk
   // elemanlarini degistirmeyecegi icin bu degisikligi goz ardi edebiliriz.
 
