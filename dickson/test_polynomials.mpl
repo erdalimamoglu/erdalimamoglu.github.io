@@ -26,23 +26,6 @@ dp := randpoly([x],coeffs=rand(-m..m),degree=m,dense):
 
 #################################################################
 
-# Example 4: A Multivariable Sparse Polynomial
-
-vars := [x,y,z]:
-t := 5:
-h := 10^2:
-msp := collect(randpoly(vars,terms=t,coeffs=rand(-h..h),expons=rand(0..h)),x):
-
-#################################################################
-
-# Example 5: A Multivariable Dense Polynomial
-
-vars := [x,y,z]:
-k := 10^1:
-mdp := collect(randpoly(vars,coeffs=rand(-k..k),degree=k,dense),x):
-
-#################################################################
-
 # Example Test Run
 
 f := sp:
@@ -50,14 +33,14 @@ t := degree(f,x)+1;
 rou := 2;
 
 # Activate the lines below to test cheby_2.
-r := cheby_2(rou, f, t); 
-g := add(i[1]*ChebyshevU(i[2],x),i=r):
+#r := cheby_2(rou, f, t); 
+#g := add(i[1]*ChebyshevU(i[2],x),i=r):
 
 # Activate the lines below to test dickson_2. If you wish, you may change a.
-# a := 5; 
-# b := sqrt(a); 
-# r := dickson_2(rou, f, t, b); 
-# g := add(i[1]*DicksonE(i[2],a,x),i=r):
+a := 9; 
+b := sqrt(a); 
+r := dickson_2(rou, f, t, b); 
+g := add(i[1]*DicksonE(i[2],a,x),i=r):
 
 # If is_zero=0, then everything is ok.
 
