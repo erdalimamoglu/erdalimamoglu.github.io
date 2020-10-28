@@ -226,11 +226,11 @@ lprint("");
 
 DicksonD := proc(n,a,x)
 	return DicksonKP1(n,a,x,0);
-end proc;
+end proc:
 
 DicksonE := proc(n,a,x)
 	return DicksonKP1(n,a,x,1);
-end proc;
+end proc:
 
 DicksonD_alt := proc(n, a, x)
 	return DicksonKP1_alt(n,a,x,0);
