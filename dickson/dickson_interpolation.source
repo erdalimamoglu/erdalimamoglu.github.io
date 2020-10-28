@@ -1,16 +1,17 @@
-#################################################################
+#----------------------------------------------------------------
 
-print("------------------------------");
-print("------------------------------");
-print(" This Maple Package is implemented by Erdal Imamoglu <eimamoglu@klu.edu.tr>");
-print("");
-print("This package contains procedures to write a given polynomial f in terms of Chebyshev Polynomials of the 1st and 2nd Kind, and in terms of Dickson Polynomials of the 1st and 2nd Kind.");
-print("");
-print("References");
-print("[1] Imamoglu, E., Kaltofen, E. L., & Yang, Z. (2018, July). Sparse polynomial interpolation with arbitrary orthogonal polynomial bases. In Proceedings of the 2018 ACM International Symposium on Symbolic and Algebraic Computation (pp. 223-230).");
-print("");
+lprint("");
+lprint("");
+lprint("");
+lprint("This Maple Package is implemented by Erdal Imamoglu <eimamoglu@klu.edu.tr>");
+lprint("");
+lprint("This package contains procedures to write a given polynomial f in terms of Chebyshev Polynomials of the 1st and 2nd Kind, and in terms of Dickson Polynomials of the 1st and 2nd Kind.");
+lprint("");
+lprint("References");
+lprint("[1] Imamoglu, E., Kaltofen, E. L., & Yang, Z. (2018, July). Sparse polynomial interpolation with arbitrary orthogonal polynomial bases. In Proceedings of the 2018 ACM International Symposium on Symbolic and Algebraic Computation (pp. 223-230).");
+lprint("");
 
-#################################################################
+#----------------------------------------------------------------
 
 lprint("");
 lprint("----------- Prony's Algorithm -----------");
@@ -72,12 +73,12 @@ prony := proc(rou, aa::list, ee::list, t::nonnegint)
 		# the pw[i] are the exponents of the unknown polynomial
 	od:
 
-	#sp := [solve(tlp=0,z)]; 
+	#sp := [solve(tlp=0,z)];
 
-	#for i from 1 to t do 
+	#for i from 1 to t do
 		#tmp := log[rou](sp[i]);
 		#pw[i] := round(evalf(tmp));
-	#od;	
+	#od;
 
 	# TV, C, RR, form those necessary matrices for computation
 
@@ -101,7 +102,7 @@ prony := proc(rou, aa::list, ee::list, t::nonnegint)
 
 end proc:
 
-#################################################################
+#----------------------------------------------------------------
 
 lprint("");
 lprint("----------- Chebyshev-1 Interpolation -----------");
@@ -142,7 +143,7 @@ cheby_1 := proc(rou, pre_f, cheby_sparsity)
 
 end proc:
 
-#################################################################
+#----------------------------------------------------------------
 
 lprint("");
 lprint("----------- Chebyshev-2 Interpolation -----------");
@@ -181,7 +182,7 @@ cheby_2 := proc(rou, pre_f, cheby_sparsity)
 
 end proc:
 
-#################################################################
+#----------------------------------------------------------------
 
 lprint("");
 lprint("----------- Dickson-1 Interpolation -----------");
@@ -198,7 +199,7 @@ dickson_1 := proc(rou, pre_f, dickson_sparsity)
 	return w;
 end proc:
 
-#################################################################
+#----------------------------------------------------------------
 
 lprint("");
 lprint("----------- Dickson-2 Interpolation -----------");
@@ -210,12 +211,11 @@ dickson_2 := proc(rou, pre_f, dickson_sparsity, b)
         local pre_ff, v, w, i;
         pre_ff := subs(x=x*(2*b),pre_f);
         v := cheby_2( rou, pre_ff, dickson_sparsity);
-        print( v );
         w := [seq( [ simplify( i[1]/(b^(i[2])) ), i[2] ] , i=v )];
         return w;
 end proc:
 
-#################################################################
+#----------------------------------------------------------------
 
 lprint("");
 lprint("----------- Procedures to compute Dickson Polynomials in K[x] -----------");
@@ -224,31 +224,23 @@ lprint("Use DicksonE(n,a,x) for the 2nd kind");
 lprint("Here n = degree, a = an element in K, x = variable");
 lprint("");
 
-DicksonD := proc(n, a, x)
-	option remember;
-	local i,d;
-	d[0] := 2;
-	d[1] := x;
-	for i from 2 to n do
-		d[i] := expand( x*d[i-1] - a*d[i-2] );
-		#d[i] := collect(normal(d[i]),x);
-	od;
-	return d[n];
+DicksonD := proc(n,a,x)
+	return DicksonKP1(n,a,x,0);
+end proc;
+
+DicksonE := proc(n,a,x)
+	return DicksonKP1(n,a,x,1);
+end proc;
+
+DicksonD_alt := proc(n, a, x)
+	return DicksonKP1_alt(n,a,x,0);
 end proc:
 
-DicksonE := proc(n, a, x)
-	option remember;
-	local i,e;
-	e[0] := 1;
-	e[1] := x;
-	for i from 2 to n do
-		e[i] := expand( x*e[i-1] - a*e[i-2] );
-		#e[i] := collect(normal(e[i]),x);
-	od;
-	return e[n];
+DicksonE_alt := proc(n, a, x)
+	return DicksonKP1_alt(n,a,x,1);
 end proc:
 
-#################################################################
+#----------------------------------------------------------------
 
 lprint("");
 lprint("----------- Procedure to compute Dickson Polynomials of the (k+1)-th kind in K[x] -----------");
@@ -256,7 +248,18 @@ lprint("Use DicksonKP1(n,a,x,k)");
 lprint("Here n = degree, a = an element in K, x = variable, k = an integer");
 lprint("");
 
+with(LinearAlgebra):
+
 DicksonKP1 := proc(n,a,x,k)
+	option remember;
+	local A,P,r;
+	A := Matrix([[0,1],[-a,x]]);
+	P := Matrix([[2-k],[x]]);
+	r := map(simplify, A^(n-1).P);
+	return r[2][1];
+end proc:
+
+DicksonKP1_alt := proc(n,a,x,k)
 	option remember;
 	local i, dk;
 	dk[0] := 2-k;
@@ -268,10 +271,9 @@ DicksonKP1 := proc(n,a,x,k)
 	return dk[n];
 end proc:
 
-#################################################################
+#----------------------------------------------------------------
 
-print("------------------------------");
-print("------------------------------");
+lprint("");
+lprint("");
 
-#################################################################
-
+#----------------------------------------------------------------
