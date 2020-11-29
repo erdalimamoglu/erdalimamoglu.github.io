@@ -1,6 +1,15 @@
 <html>
 <meta charset="UTF-8">
 
+<script>
+function myFunction()
+{
+var x = document.getElementById("more");
+if (x.style.display === "none") {x.style.display = "block";}
+else {x.style.display =  "none";}
+}
+</script>
+
 <head>
 <title>
 Erdal Imamoglu
@@ -95,6 +104,12 @@ Vol. 48, No. 3, Issue 189, 2014.
 </li>
 
 </ul>
+
+<button onclick="myFunction()">
+<b>More [Show/Hide]</b>
+</button>
+
+<div id="more" style="display: none;">
 
 <h3> Conference Talks </h3>
 
@@ -247,6 +262,8 @@ FL, USA, January 30, 2014.
 </li>
 
 </ul>
+
+</div>
 
 <hr>
 
