@@ -1,4 +1,4 @@
-#----------------------------------------------------------------
+#------------------------------------------------------------
 
 lprint("");
 lprint("");
@@ -11,7 +11,7 @@ lprint("References");
 lprint("[1] Imamoglu, E., Kaltofen, E. L., & Yang, Z. (2018, July). Sparse polynomial interpolation with arbitrary orthogonal polynomial bases. In Proceedings of the 2018 ACM International Symposium on Symbolic and Algebraic Computation (pp. 223-230).");
 lprint("");
 
-#----------------------------------------------------------------
+#------------------------------------------------------------
 
 lprint("");
 lprint("----------- Prony's Algorithm -----------");
@@ -102,7 +102,7 @@ prony := proc(rou, aa::list, ee::list, t::nonnegint)
 
 end proc:
 
-#----------------------------------------------------------------
+#------------------------------------------------------------
 
 lprint("");
 lprint("----------- Chebyshev-1 Interpolation -----------");
@@ -143,7 +143,7 @@ cheby_1 := proc(rou, pre_f, cheby_sparsity)
 
 end proc:
 
-#----------------------------------------------------------------
+#------------------------------------------------------------
 
 lprint("");
 lprint("----------- Chebyshev-2 Interpolation -----------");
@@ -182,7 +182,7 @@ cheby_2 := proc(rou, pre_f, cheby_sparsity)
 
 end proc:
 
-#----------------------------------------------------------------
+#------------------------------------------------------------
 
 lprint("");
 lprint("----------- Dickson-1 Interpolation -----------");
@@ -199,7 +199,7 @@ dickson_1 := proc(rou, pre_f, dickson_sparsity)
 	return w;
 end proc:
 
-#----------------------------------------------------------------
+#------------------------------------------------------------
 
 lprint("");
 lprint("----------- Dickson-2 Interpolation -----------");
@@ -215,42 +215,42 @@ dickson_2 := proc(rou, pre_f, dickson_sparsity, b)
         return w;
 end proc:
 
-#----------------------------------------------------------------
+#------------------------------------------------------------
 
 lprint("");
 lprint("----------- Procedures to compute Dickson Polynomials in K[x] -----------");
-lprint("Use DicksonD(n,a,x) for the 1st kind");
-lprint("Use DicksonE(n,a,x) for the 2nd kind");
+lprint("Use DicksonD(n,x,a) for the 1st kind");
+lprint("Use DicksonE(n,x,a) for the 2nd kind");
 lprint("Here n = degree, a = an element in K, x = variable");
 lprint("");
 
-DicksonD := proc(n,a,x)
-	return DicksonKP1(n,a,x,0);
+DicksonD := proc(n,x,a)
+	return DicksonKP1(n,0,x,a);
 end proc:
 
-DicksonE := proc(n,a,x)
-	return DicksonKP1(n,a,x,1);
+DicksonE := proc(n,x,a)
+	return DicksonKP1(n,1,x,a);
 end proc:
 
-DicksonD_alt := proc(n, a, x)
-	return DicksonKP1_alt(n,a,x,0);
+DicksonD_alt := proc(n,x,a)
+	return DicksonKP1_alt(n,0,x,a);
 end proc:
 
-DicksonE_alt := proc(n, a, x)
-	return DicksonKP1_alt(n,a,x,1);
+DicksonE_alt := proc(n,x,a)
+	return DicksonKP1_alt(n,1,x,a);
 end proc:
 
-#----------------------------------------------------------------
+#------------------------------------------------------------
 
 lprint("");
 lprint("----------- Procedure to compute Dickson Polynomials of the (k+1)-th kind in K[x] -----------");
-lprint("Use DicksonKP1(n,a,x,k)");
+lprint("Use DicksonKP1(n,k,x,a)");
 lprint("Here n = degree, a = an element in K, x = variable, k = an integer");
 lprint("");
 
 with(LinearAlgebra):
 
-DicksonKP1 := proc(n,a,x,k)
+DicksonKP1 := proc(n,k,x,a)
 	option remember;
 	local A,P,r;
 	A := Matrix([[0,1],[-a,x]]);
@@ -259,7 +259,7 @@ DicksonKP1 := proc(n,a,x,k)
 	return r[2][1];
 end proc:
 
-DicksonKP1_alt := proc(n,a,x,k)
+DicksonKP1_alt := proc(n,k,x,a)
 	option remember;
 	local i, dk;
 	dk[0] := 2-k;
@@ -271,9 +271,9 @@ DicksonKP1_alt := proc(n,a,x,k)
 	return dk[n];
 end proc:
 
-#----------------------------------------------------------------
+#------------------------------------------------------------
 
 lprint("");
 lprint("");
 
-#----------------------------------------------------------------
+#------------------------------------------------------------

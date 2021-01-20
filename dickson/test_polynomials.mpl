@@ -41,7 +41,7 @@ rou := 2;
 a := 9;
 b := sqrt(a);
 r := dickson_2(rou, f, t, b):
-g := add(i[1]*DicksonE(i[2],a,x),i=r):
+g := add(i[1]*DicksonE(i[2],x,a),i=r):
 
 # If is_zero=0, then everything is ok.
 
