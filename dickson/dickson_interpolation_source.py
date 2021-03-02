@@ -6,7 +6,7 @@ init_printing()
 
 print("""
 ------------------------------------------------------------
-x, a		    = Symbols
+x, a		    	= Symbols
 
 ChebyshevT(n,x)     = Chebyshev Polynomial of the 1st Kind
 ChebyshevU(n,x)     = Chebyshev Polynomial of the 2nd Kind
@@ -27,18 +27,24 @@ def Chebyshev(n,x,k):
 	P = A**n * P0
 	return expand( P[0,0] )
 
-def ChebyshevT(n,x): 
+def ChebyshevT(n,x):
 	return Chebyshev(n,x,1)
 
 def ChebyshevU(n,x):
 	return Chebyshev(n,x,2)
+
+def ChebyshevV(n,x):
+	return Chebyshev(n,x,3)
+
+def ChebyshevW(n,x):
+	return Chebyshev(n,x,4)
 
 #------------------------------------------------------------
 
 def DicksonKP1(n,k,x,a):
         A = Matrix([ [0,1],[-a,x] ])
         P0 = Matrix([ [2-k],[x] ])
-        P = A**n * P0 
+        P = A**n * P0
         return expand( P[0,0] )
 
 def DicksonD(n,x,a):
@@ -48,4 +54,3 @@ def DicksonE(n,x,a):
 	return DicksonKP1(n,1,x,a)
 
 #------------------------------------------------------------
-
